@@ -1,4 +1,5 @@
 use std::iter::AdditiveIterator;
+use std::iter::IteratorExt;
 
 use ::tools;
 
@@ -11,4 +12,10 @@ pub fn problem002 () -> u64 {
          .filter(|&x| x <= 4_000_000)
          .filter(|&x| x % 2 == 0)
          .sum()
+}
+
+pub fn problem003 () -> u64 {
+  let factors = tools::prime_factors(600851475143);
+  let maxun   = factors.iter().max().unwrap();
+  *maxun
 }

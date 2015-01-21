@@ -13,6 +13,10 @@ fn problem002 () {
   assert_eq!(4613732, p::problem002());
 }
 
+#[test]
+fn problem003 () {
+  assert_eq!(6857, p::problem003());
+}
 
 #[test]
 fn fib () {
@@ -21,4 +25,12 @@ fn fib () {
   assert_eq!(1, t::fib(2));
   assert_eq!(2, t::fib(3));
 }
+
+#[test]
+fn prime_factors () {
+  assert_eq!(vec![2],    t::prime_factors( 2));
+  assert_eq!(vec![3],    t::prime_factors( 3));
+  assert_eq!(vec![2, 2], t::prime_factors( 4));
+  assert_eq!(vec![5],    t::prime_factors( 5));
+  assert_eq!(vec![5, 2], t::prime_factors(10));
 }
