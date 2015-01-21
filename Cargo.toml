@@ -3,3 +3,7 @@
 name = "euler"
 version = "0.0.1"
 authors = ["Norbert Melzer <timmelzer@gmail.com>"]
+
+[dependencies]
+stopwatch = "0.0.4"
+
