@@ -4,6 +4,8 @@ before_install:
   - sudo apt-get update -qq
 install:
   - sudo apt-get install -qq rust-nightly cargo
+  - cargo --version
+  - rustc --version
 script:
   - cargo clean
   - cargo build --verbose
