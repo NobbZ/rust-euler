@@ -1,4 +1,5 @@
 extern crate euler;
+extern crate test;
 
 use euler::problems as p;
 use euler::tools as t;
@@ -24,6 +25,9 @@ fn fib () {
   assert_eq!(1, t::fib(1));
   assert_eq!(1, t::fib(2));
   assert_eq!(2, t::fib(3));
+  for i in 1..15 {
+    assert_eq!(fib_naiv(i), t::fib(i));
+  }
 }
 
 #[test]
@@ -33,4 +37,22 @@ fn prime_factors () {
   assert_eq!(vec![2, 2], t::prime_factors( 4));
   assert_eq!(vec![5],    t::prime_factors( 5));
   assert_eq!(vec![5, 2], t::prime_factors(10));
+}
+
+#[bench]
+fn bench_fib (b: &mut test::Bencher) {
+  b.iter(|| t::fib(50) );
+}
+
+#[bench]
+fn bench_fib_naiv(b: &mut test::Bencher) {
+  b.iter(|| fib_naiv(50) );
+}
+
+fn fib_naiv (n: u64) -> u64 {
+  match n {
+    0 => 0,
+    1 => 1,
+    _ => fib_naiv(n-1) + fib_naiv(n-2)
+  }
 }
