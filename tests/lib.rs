@@ -25,7 +25,7 @@ fn fib () {
   assert_eq!(1, t::fib(1));
   assert_eq!(1, t::fib(2));
   assert_eq!(2, t::fib(3));
-  for i in 1..15 {
+  for i in 1u64..15 {
     assert_eq!(fib_naiv(i), t::fib(i));
   }
 }
