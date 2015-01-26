@@ -8,10 +8,10 @@ pub fn problem001 () -> u64 {
 }
 
 pub fn problem002 () -> u64 {
-  (1..90).map(|x| tools::fib(x))
-         .filter(|&x| x <= 4_000_000)
-         .filter(|&x| x % 2 == 0)
-         .sum()
+  (1u64..90).map(|x| tools::fib(x))
+            .filter(|&x| x <= 4_000_000)
+            .filter(|&x| x % 2 == 0)
+            .sum()
 }
 
 pub fn problem003 () -> u64 {
