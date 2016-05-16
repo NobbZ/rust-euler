@@ -1,4 +1,6 @@
 language: rust
+rust:
+  - nightly
 install:
   - cargo --version
   - rustc --version
