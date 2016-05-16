@@ -22,3 +22,15 @@ fn prime_factors_rec(n: u64, m: u64) -> Vec<u64> {
   }
   res
 }
+
+fn reverse(x: &String) -> String {
+    x.chars()
+        .rev()
+        //.flat_map(|g| g.chars())
+        .collect()
+}
+
+pub fn is_palindrome(x: &String) -> bool {
+  // x == x.chars_rev().collect()
+    *x == reverse(x)
+}

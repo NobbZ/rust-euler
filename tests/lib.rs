@@ -1,3 +1,5 @@
+#![feature(test)]
+
 extern crate euler;
 extern crate test;
 
@@ -18,6 +20,8 @@ fn problem002 () {
 fn problem003 () {
   assert_eq!(6857, p::problem003());
 }
+
+#[test]
 
 #[test]
 fn fib () {
@@ -41,12 +45,12 @@ fn prime_factors () {
 
 #[bench]
 fn bench_fib (b: &mut test::Bencher) {
-  b.iter(|| t::fib(50) );
+  b.iter(|| t::fib(30) );
 }
 
 #[bench]
 fn bench_fib_naiv(b: &mut test::Bencher) {
-  b.iter(|| fib_naiv(50) );
+  b.iter(|| fib_naiv(30) );
 }
 
 fn fib_naiv (n: u64) -> u64 {
