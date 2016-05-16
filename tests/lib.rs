@@ -51,16 +51,6 @@ fn prime_factors() {
     assert_eq!(vec![5, 2], t::prime_factors(10));
 }
 
-#[bench]
-fn bench_fib(b: &mut test::Bencher) {
-    b.iter(|| t::fib(30));
-}
-
-#[bench]
-fn bench_fib_naiv(b: &mut test::Bencher) {
-    b.iter(|| fib_naiv(30));
-}
-
 fn fib_naiv(n: u64) -> u64 {
     match n {
         0 => 0,
