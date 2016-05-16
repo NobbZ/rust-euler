@@ -22,6 +22,9 @@ fn problem003 () {
 }
 
 #[test]
+fn problem004() {
+    assert_eq!(906609, p::problem004());
+}
 
 #[test]
 fn fib () {

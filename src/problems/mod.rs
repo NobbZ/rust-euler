@@ -19,3 +19,16 @@ pub fn problem003 () -> u64 {
   let maxun   = factors.iter().max().unwrap();
   *maxun
 }
+
+pub fn problem004 () -> u64 {
+    let xs = 100..1000; // Ranges are exclusive!
+    let mut products: Vec<u64> = vec![];
+    for x in xs {
+        for y in 100..(x+1) {
+            if tools::is_palindrome(&(format!("{}", x * y))) {
+                products.push(x * y);
+            }
+        }
+    }
+    *products.iter().max().unwrap()
+}
