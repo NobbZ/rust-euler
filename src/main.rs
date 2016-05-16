@@ -3,19 +3,21 @@ extern crate stopwatch;
 
 use euler::problems;
 
-fn main () {
+fn main() {
     let args = std::env::args().collect::<Vec<_>>();
 
     let sw = stopwatch::Stopwatch::start_new();
 
     if args.len() > 1 {
-        println!("Result of problem {:>3}: {:>15}", args[1], match args[1].as_str() {
-            "1" => problems::problem001(),
-            "2" => problems::problem002(),
-            "3" => problems::problem003(),
-            "4" => problems::problem004(),
-            _   => 0
-        });
+        println!("Result of problem {:>3}: {:>15}",
+                 args[1],
+                 match args[1].as_str() {
+                     "1" => problems::problem001(),
+                     "2" => problems::problem002(),
+                     "3" => problems::problem003(),
+                     "4" => problems::problem004(),
+                     _ => 0,
+                 });
     } else {
         let mut foo: Vec<fn() -> u64> = vec![];
         foo.push(problems::problem001);
