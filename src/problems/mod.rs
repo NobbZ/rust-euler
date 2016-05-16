@@ -33,3 +33,8 @@ pub fn problem004() -> u64 {
     }
     *products.iter().max().unwrap()
 }
+
+pub fn problem005() -> u64 {
+    let xs = 2..21;
+    xs.fold(1, tools::lcm)
+}

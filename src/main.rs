@@ -16,6 +16,7 @@ fn main() {
                      "2" => problems::problem002(),
                      "3" => problems::problem003(),
                      "4" => problems::problem004(),
+                     "5" => problems::problem005(),
                      _ => 0,
                  });
     } else {

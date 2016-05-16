@@ -38,3 +38,15 @@ pub fn is_palindrome(x: &String) -> bool {
     // x == x.chars_rev().collect()
     *x == reverse(x)
 }
+
+pub fn lcm(n: u64, m: u64) -> u64 {
+    (n * m) / gcd(n, m)
+}
+
+pub fn gcd(n: u64, m: u64) -> u64 {
+    if m == 0 {
+        n
+    } else {
+        gcd(m, n % m)
+    }
+}
